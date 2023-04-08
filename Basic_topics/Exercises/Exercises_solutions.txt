@@ -1,0 +1,502 @@
+1 /*Write a java program to SWAP two numbers.
+Sample I/O:
+Enter the first number:                                                                                                 
+65                                                                                                                      
+Enter the second number:                                                                                                
+23                                                                                                                      
+After Swap:                                                                                                             
+23                                                                                                                      
+65 
+
+*/
+import java.util.*;
+class Swap{
+
+int a,b,temp;
+void input()
+{
+Scanner s=new Scanner(System.in);
+System.out.println("Enter the first number:");
+a=s.nextInt();
+System.out.println("Enter the second number:");
+b=s.nextInt();
+}
+void process()
+{
+	temp=a;
+	a=b;
+	b=temp;
+}
+void output()
+{
+     System.out.println("After Swap:");
+     System.out.println(a);
+     System.out.println(b);
+}
+}
+class SwapTest{
+	
+
+                public static void main(String[]args){
+
+                                Swap s1=new Swap();
+
+                                s1.input();
+
+                                s1.process();
+
+                                s1.output();
+
+                }
+
+}
+
+2./*Java program to create class Circle with methods to calculate area and perimeter of circle. 
+
+Note: use Math.PI
+
+Sample I/O
+
+Enter the radius:
+15.50
+Area of circle:754.7676350249478
+Perimeter of circle:97.38937226128358
+*/
+import java.util.Scanner;
+class Circle{  
+double r,a,p;
+	
+	public double getArea()
+	{	
+		a= Math.PI *r*r;
+		return a;
+	}
+	public double getPerimeter()
+	{	
+		p = 2* Math.PI *r;
+		return p;
+	}
+	public static void main(String[]args){
+        
+		Circle c=new Circle();
+
+		Scanner s= new Scanner(System.in);
+         System.out.println("Enter the radius: ");
+         c.r=s.nextDouble();
+
+		System.out.println("Area of circle:" + c.getArea());
+		System.out.println("Perimeter of circle:" + c.getPerimeter());
+		}
+}
+
+3./*Write a java program to read three subject marks and display pass or fail.
+criteria: if all subjects marks >= 40 then pass
+other wise fail.
+
+Sample I/O:
+
+case 1:
+Enter first subject marks:                                                                                              
+60                                                                                                                      
+Enter second subject marks:                                                                                             
+20                                                                                                                      
+Enter third subject marks:                                                                                              
+50                                                                                                                      
+Fail                                                                                                                    
+
+case 2:
+Enter first subject marks:                                                                                              
+70                                                                                                                      
+Enter second subject marks:                                                                                             
+802                                                                                                                     
+Enter third subject marks:                                                                                              
+90                                                                                                                      
+Pass 
+
+*/
+import java.util.*;
+class Result{
+    int m1,m2,m3;
+    Result(int m1,int m2,int m3)
+	{
+        this.m1=m1;
+        this.m2=m2;
+        this.m3=m3;
+    }
+    void process()
+	{
+        if(m1>=40 && m2>=40 && m3>=40){
+            System.out.println("Pass");
+    }
+        else{
+                System.out.println("Fail");
+            }
+        }
+    }
+    class ResultTest{
+        public static void main(String[]args)
+		{
+            int m1,m2,m3;
+            Scanner s=new Scanner(System.in);
+            System.out.println("Enter first subject marks:");m1=s.nextInt();
+            System.out.println("Enter second subject marks:");m2=s.nextInt();
+            System.out.println("Enter third subject marks:");m3=s.nextInt();
+            Result r1=new Result(m1,m2,m3);
+			r1.process();
+}
+}
+
+4/*Implement a class Account. 
+An account has the properties customer name,account number & balance 
+and a methods to deposit, withdraw and inquire the current balance.
+Pass values into a constructor to set.
+If no value is passed the initial balance should be set to 0.
+
+Charge a 5 penalty if an attempt is made to withdraw more money than available in the account.
+
+Sample Output:
+
+CASE 1(with penalty):
+
+Current Balance: 2000.0                                                                                                 
+Enter the amount to withdraw                                                                                            
+3000                                                                                                                    
+Current Balance after withdraw: 1995.0                                                                                  
+Enter the amount to deposit                                                                                             
+1000                                                                                                                    
+Current Balance after deposit: 2995.0                                                                           
+                                                                                                                            
+
+CASE 2(without penalty):
+Current Balance: 2000.0                                                                                                 
+Enter the amount to withdraw                                                                                            
+1000                                                                                                                    
+Current Balance after withdraw: 1000.0                                                                                  
+Enter the amount to deposit                                                                                             
+2000                                                                                                                    
+Current Balance after deposit: 3000.0                                                                                   
+ */
+import java.util.Scanner;
+class Account{
+Scanner sc=new Scanner(System.in);
+String Name;
+long acno;  
+double balance;
+Account() 
+  { 
+	balance = 0;   
+  }
+Account(String n,long a,double b)
+   { 
+   	 Name=n;
+     acno=a;
+     balance=b; 
+    }
+void deposit(double sum)
+    {
+  	 balance += sum;
+ 
+    }
+  void withdraw(double sum) 
+  {
+  	  if (sum > balance)
+    { 
+    		  balance -= 5;
+    }
+ else 
+    { 
+    		  balance -= sum;
+      
+    }
+  }
+  double getBalance() 
+   { 
+	return balance; 
+   } 
+}
+class TestAccount{
+public static void main(String a[])
+{		 
+ Account b=new Account("Anil",12345L,2000.0);
+ System.out.println("Current Balance: "+b.getBalance());
+ System.out.println("Enter the amount to withdraw");
+ double amt=sc.nextDouble();
+ b.withdraw(amt);
+ System.out.println("Current Balance after withdraw: "+b.getBalance());
+ System.out.println("Enter the amount to deposit");
+ amt=sc.nextDouble();
+ b.deposit(amt);
+ System.out.println("Current Balance after deposit: "+b.getBalance());
+}
+}
+
+5 //overloading 
+/*program to overload find() method to calculate area of circle and rectangle
+Sample I/O:
+Enter the radius of circle:                                                                                             
+2                                                                                                                       
+Area of Circle: 12.56                                                                                                   
+Enter the length and breadth of rectangle:                                                                              
+5 6                                                                                                                     
+Area of Rectangle: 30.0 
+*/
+import java.util.*;     
+class Area{
+        double find(int r)
+         {
+            return(3.14*r*r);
+        }
+        double find(int l,int b)
+        {
+            return(l*b);
+        }
+    }
+class Overloading{
+	
+	public static void main(String args[])
+	     {
+            int a,b,c;
+            Scanner s= new Scanner(System.in);
+            Area a1=new Area();
+            System.out.println("Enter the radius of circle:");
+            a=s.nextInt();
+            System.out.println("Area of Circle: "+a1.find(a));
+            System.out.println("Enter the length and breadth of rectangle:");
+            a=s.nextInt();
+            b=s.nextInt();
+            System.out.println("Area of Rectangle: "+a1.find(a,b));
+         
+        }
+    }
+
+
+6.//inheritence
+/*program to create super class as Student with id,name and three subject marks m1,m2,m3.
+create a sub class Result with total and average and result.
+create an executable class and instantiate an object for sub class,
+invoke respective methods to input the data, 
+process the data and display the same.
+
+Sample I/O:
+Case 1:
+Enter id:                                                                                                               
+1                                                                                                                      
+Enter name:                                                                                                             
+abc                                                                                                                     
+Enter subject1 marks:                                                                                                   
+40                                                                                                                      
+Enter subject2 marks:                                                                                                   
+50                                                                                                                      
+Enter subject3 marks:                                                                                                   
+60                                                                                                                      
+Student id:1                                                                                                            
+Name      :abc                                                                                                          
+Subject1  :40                                                                                                           
+Subject2  :50                                                                                                           
+Subject3  :60                                                                                                           
+Total is  :150                                                                                                          
+Average is:50.0                                                                                                         
+result is :Second Division     
+
+
+CASE 2:
+
+Student id:2                                                                                                            
+Name      :xyz                                                                                                          
+Subject1  :70                                                                                                           
+Subject2  :0                                                                                                            
+Subject3  :90                                                                                                           
+Total is  :160                                                                                                          
+Average is:53.0                                                                                                         
+result is :Fail
+
+CASE 3:
+
+Student id:3                                                                                                            
+Name      :mno                                                                                                          
+Subject1  :88                                                                                                           
+Subject2  :99                                                                                                           
+Subject3  :100                                                                                                          
+Total is  :287                                                                                                          
+Average is:95.0                                                                                                         
+result is :Distinction
+
+CASE 4:
+                                                                                                                
+Student id:4                                                                                                            
+Name      :pqr                                                                                                          
+Subject1  :66                                                                                                           
+Subject2  :59                                                                                                           
+Subject3  :70                                                                                                           
+Total is  :195                                                                                                          
+Average is:65.0                                                                                                         
+result is :First Division */
+import java.util.*;
+class Student{
+	String name;
+    int id,m1,m2,m3;
+    Student(int id,String name,int m1,int m2,int m3)
+    {
+        this.id=id;
+        this.name=name;
+        this.m1=m1;
+        this.m2=m2;
+        this.m3=m3;
+    }
+    void output()
+    {
+        System.out.println("Student id:"+id);
+        System.out.println("Name      :"+name);
+        System.out.println("Subject1  :"+m1);
+        System.out.println("Subject2  :"+m2);
+        System.out.println("Subject3  :"+m3);
+        
+    }
+    
+}
+class Result extends Student{
+    int total;
+    String result;
+    double avg;
+    Result(int id,String name,int m1,int m2,int m3)
+    {
+        super(id,name,m1,m2,m3);
+    }
+    void process()
+    {
+        total=m1+m2+m3;
+        avg=total/3;
+        if(m1>=40&&m2>=40&&m3>=40)
+        {
+            if(avg>=70)
+                result="Distinction";
+            else if(avg>=60 && avg<70)
+                result="First Division";
+            else if(avg>=50 && avg<60)
+                result="Second Division";
+            else if(avg>=40 && avg<50)
+                result="Third Division";
+        }
+        else
+            result="Fail";
+    }
+    void output()
+    {
+        super.output();
+        System.out.println("Total is  :"+total);
+        System.out.println("Average is:"+avg);
+        System.out.println("result is :"+result);
+    }
+}
+class StudentInheritanceTest
+{
+    public static void main(String args[])
+    {
+        int id,m1,m2,m3;
+        String name;
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter id:");
+        id=s.nextInt();
+        System.out.println("Enter name:");
+        name=s.next();
+        System.out.println("Enter subject1 marks:");
+        m1=s.nextInt();
+        System.out.println("Enter subject2 marks:");
+        m2=s.nextInt();
+        System.out.println("Enter subject3 marks:");
+        m3=s.nextInt();
+        Result r=new Result(id,name,m1,m2,m3);
+        r.process();
+        r.output();
+    }
+}
+
+7./*program to find the sum of the individual digits of the given number.
+if input is 123, then output should be 6
+Sample I/O:
+Enter the positive integer number to find sum of digits:
+1234
+Sum of digits: 10
+*/
+import java.util.*;
+class SumOfDigits{
+    int n,sum,r;
+    Scanner s;
+    SumOfDigits(){
+        //instantiate object for Scanner class
+        s=new Scanner(System.in);
+        sum=0;
+    }
+    void input(){
+        System.out.println("Enter the positive integer number to find sum of digits:");
+        n=s.nextInt();
+    }
+    void process(){
+        while(n!=0){
+            r=n%10;
+            sum+=r;
+            n=n/10;
+        }
+    }
+    void output(){
+        System.out.println("Sum of digits: "+sum);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        SumOfDigits s=new SumOfDigits();
+        s.input();
+        s.process();
+        s.output();
+    }
+}
+
+/*Write a Java program that prints the numbers from 1 to 50. But for multiples of three print "Fizz" instead of 
+the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and 
+five print "FizzBuzz"
+
+SAMPLE OUTPUT:
+1                                                                                                                       
+2                                                                                                                       
+Fizz                                                                                                                    
+4                                                                                                                       
+Buzz                                                                                                                    
+Fizz                                                                                                                    
+7                                                                                                                       
+8                                                                                                                       
+Fizz                                                                                                                    
+Buzz                                                                                                                    
+11                                                                                                                      
+Fizz                                                                                                                    
+13                                                                                                                      
+14                                                                                                                      
+FizzBuzz    
+.
+.
+.
+41                                                                                                                      
+Fizz                                                                                                                    
+43                                                                                                                      
+44                                                                                                                      
+FizzBuzz                                                                                                                
+46                                                                                                                      
+47                                                                                                                      
+Fizz                                                                                                                    
+49                                                                                                                      
+Buzz 
+*/
+public class FizzBuzzTest{
+     public static void main(String args[]){
+    
+        for(int i = 1; i <= 50; i++) {
+            if(i % (3*5) == 0) System.out.println("FizzBuzz");
+            else if(i % 5 == 0) System.out.println("Buzz");
+            else if(i % 3 == 0) System.out.println("Fizz");
+            else System.out.println(i);
+        } 
+    } 
+}
+
+
+
+
