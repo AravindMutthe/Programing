@@ -16,7 +16,6 @@
 **Friend Functions**
 **Constructors**(default,para,copy)
 **Destructors**
-
 };
 
 # FUNCTIONS:
@@ -76,7 +75,15 @@ a=x;
 b=y;
 }
 ```
+* Dynamic initialization is nothing but taking input from users.
+  
+```  
+Scanner ip= new Scanner ( system.in);
+int n= ip.nextInt();
 
+Console  ip= System. In
+int n= Integer.ParseInt(ip.readLine())
+```
 ## Copying one Object to another: (copy, call by adress).
 
 ```
@@ -100,3 +107,11 @@ b=x.a;
     1. pointers
     2. new and delete
 
+# DATA-TYPES:
+
+1. Char 
+> a='x' or 88
+2. Boolean 
+> b= true
+3. String 
+>s=  "  Aravind "
