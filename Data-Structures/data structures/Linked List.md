@@ -1,17 +1,26 @@
-LL: A linked list is a collection of nodes where each node contains
-	 data and
-	 a pointer to the next node.
 
-1. Node=data+next ptr; 
+# Linked List:
+**A linked list is a collection of nodes.**
+**where each ***node** contains**
+
+1. data and
+2. a pointer to the next node.
+
+1. **Node**=data+next ptr; 
 
 * The first part is to create a node (structure).
 
+``` c
 struct node
 {
     int data;
    	struct Node *next;
 };
--------------------------------------
+```
+
+* in cpp
+
+```c++
 c++:
 
 class Node
@@ -25,24 +34,24 @@ class Node
    	next = null; 
    }
 }
------------------------------------
+```
 
 
-2. linked_list= head + tail+funtions
+# linked_list = head + tail + funtions;
 
 * Now, we will create a class ‘linked_list’ which will contain all the functions and data members required for a linked list.
 * This class will use the structure ‘node’ for the creation of the linked list.
 
-
+``` c++
 class linked_list
 {
 private:
     node *head,*tail;
 }
+```
 
 
-
-3. keep track head/first node
+1. keep track head/first node
 * most important part of a linked list is to always keep the track of the first node because access to the first node means access to the entire list. 
   So, let’s call our first node as ‘ head’.
 
