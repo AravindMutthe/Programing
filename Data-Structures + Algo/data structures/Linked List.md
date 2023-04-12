@@ -197,34 +197,35 @@ INSERT_AT_BEGINNING(L, n) //start by passing the node (n) and the linked list (L
   L.head = n            //head should always point to the first element of the linked list, so we change the head to point to the new node 
 ```
 
--------------------------------------------------
-1. inserting at end of linked_list
+## 1. inserting at end of linked_list
 
+```
 INSERT_AT_LAST(L, n)		//start by passing the linked list and the node to the function
   temp = L.head’			//will first start from the head of the linked list
   while(temp.next != null) //next task is to iterate to the last of the linked list.
       temp = temp.next
 
   temp.next = n // add new node
+```
 
---------------------------------------------------
-4. inserting node in middle of linked_list i.e our nodes z, b, c, a, x, y
+**1. inserting node in middle of linked_list i.e our nodes z, b, c, a, x, y**
 
 * start by passing the node to be inserted (n) and 
 * after which node we are going to insert this node (a)
 
+```
 INSERT_NODE_AFTER(n, a)
   n.next = a.next //We point next of the new node (n) to next of the node a.
   a.next = n //point next of the a to the new node n
+```
 
-
-  ----------------------------------------------
-5. Deleting a Node from a Linked List
+**1. Deleting a Node from a Linked List**
 
 * We delete any node of a linked list by connecting its prev node of the node to be deleted by the successor node of the node.
 * We might need to clean this garbage ourself in some languages like C by using the free function.
- while some languages like Java does it automatically.
+* while some languages like Java does it automatically.
 
+```
  DEL(L, n)
   tmp = L.head //will first start iterate from the head of the linked list
   if tmp == n // If the node we are going to delete is the head of the linked list (node to be deleted is head
@@ -238,3 +239,4 @@ INSERT_NODE_AFTER(n, a)
           	  free(n);
               break
           tmp = tmp.next
+```

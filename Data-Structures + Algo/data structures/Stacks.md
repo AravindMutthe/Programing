@@ -1,4 +1,5 @@
-STACK: DS + ADT
+# STACK: DS + ADT:
+
 * a stack is a logical data structure which follows the same kind of rules.
 * It works on LIFO (Last In First Out) policy. 
 * It means that the item which enters at last is removed first.
@@ -6,62 +7,68 @@ STACK: DS + ADT
 * A stack supports few basic operations.
 * All these operations need to implement (either with a linked list or an array) to make a stack
 
-1. Push → dds a new element to the stack,any element added to the stack goes at the top
-2. Pop → removes and also returns the top-most element from the stack.
-3. Top → only returns (doesn’t remove) the top-most element of a stack.
-4. isEmpty → checks whether a stack is empty or not i.e., if there is any element present in the stack or not.
+1. **Push** → dds a new element to the stack,any element added to the stack goes at the top
+2. **Pop** → removes and also returns the top-most element from the stack.
+3. **Top** → only returns (doesn’t remove) the top-most element of a stack.
+4. **isEmpty** → checks whether a stack is empty or not i.e., if there is any element present in the stack or not.
 
-* Stack has 2 errors
-	stack underflow: When we try to pop an element from an empty stack
-	stack overflow.if the number of elements exceeds the stated size of a stack
+* **Stack has 2 errors**
+  
+	1. **stack underflow:** When we try to pop an element from an empty stack
+	2. **stack overflow:**if the number of elements exceeds the stated size of a stack
+
 * A stack is definitely an ADT because it works on LIFO policy.
 	which provides operations like push, pop, etc. for the users to interact with the data.
 * A stack can be implemented in different ways and these implementations are hidden from the user.
 
 
-Stack Using Array:
+## Stack Using Array:
 
-bottom: use the element at the beginig index of the array as the 'bottom' of the stack
-top: use the last index element of the stack as the top of the stack
+**bottom:** use the element at the beginig index of the array as the 'bottom' of the stack
+**top:** use the last index element of the stack as the top of the stack
 add: we need to add and remove elements from the top of the stack
 
-we are going to use a pointer which is always going to point the topmost element of the stack. i.e 0 index o array
-It will point to the element at index 0 when the stack is empty.
+* we are going to use a pointer which is always going to point the topmost element of the stack. i.e 0 index o array It will point to the element at index 0 when the stack is empty.
 
 
-1. isEmpty(): a function to check whether a stack is empty or not.
+1. **isEmpty():** a function to check whether a stack is empty or not.
 
+```
 IS_EMPTY(S)
   if S.top == 0
       return TRUE
   return FALSE
+```
 
---------------------------------------
 
-2. Push: 
+1. **Push:**
 
+```
 PUSH(S, x)  //start by passing the item goin to push (x) and the Stack (s) to a function
   S.top = S.top+1
   if S.top > S.size //if maximum size of the stack
       Error "Stack Overflow"
   else
       S[S.top] = x // if not add x
+```
 
-To add an item to stack, ust need to increment the top pointer by 1 and add the element there.
+* To add an item to stack, ust need to increment the top pointer by 1 and add the element there.
 
--------------------------------------------------------------
 
-3. pop:
 
+2. **pop():**
+
+```
 POP(S) // start by passing the stack S
   if IS_EMPTY(S) //first check if the stack is empty or not.
       Error “Stack Underflow”
   else
       S.top = S.top-1 // otherwise remove the element from the stack and return it.
       return S[S.top+1]
+```
 
-
-  #include <stdio.h>
+```c
+#include <stdio.h>
 
 #define SIZE 10
 
@@ -115,26 +122,27 @@ for(i=1; i<=SIZE; i++) {
 }
 return 0;
 }
-
--------------------------------------------------
-
-Stack Using Linked List :
+```
 
 
 
-1. isEmpty()
+1. **isEmpty()**
 
 * A stack will be empty if the linked list won’t have any node
 
+```
 IS_EMPTY(S) // start by passing Stack
   if S.top == null // when the top pointer of the linked list will be null.
       return TRUE
   return FALSE
+```
 
-2. Push()
+2. **Push()**
+
 * to push any node to stack, first check if the stack is empty or not.
 * If the stack is empty,make the new node head of the ll and also point the top pointer to it.
 
+```
 PUSH(S, n)
   if IS_EMPTY(S) //stack is empty
       S.head = n //new node is the head of the linked list
@@ -142,10 +150,13 @@ PUSH(S, n)
   else
       S.top.next = n
       S.top = n
+```
 
-3. Pop()
+3. **Pop()**
+
 * to pop ,first check if the stack is empty or not
 
+```
 POP(S)
   if IS_EMPTY(S)
       Error "Stack Underflow"
@@ -161,11 +172,11 @@ POP(S)
           tmp.next = NULL //making the next of the node null
           S.top = tmp //changing the top pointer
       return x
+```
 
 
 
-
-
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -272,3 +283,4 @@ traversal(s);
 return 0;
 }
 
+```

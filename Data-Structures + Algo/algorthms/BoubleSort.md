@@ -1,3 +1,6 @@
+# Bouble-Sort:
+
+```java
 import java.util.Scanner;
 class BoubleSort
 {
@@ -76,19 +79,20 @@ class BoubleSort
 		
 	}
 }
+```
 
-/*
+
 * "it performance n-1 rounds" to sort list
 * BS is a simple sorting algorithm, that works by repeatedly stepping through the list to be sorted.
 * Comparing each pair of adjacent items and swapping them if they are in the wrong order.
-  it is repeated until no swaps are needed.
+* it is repeated until no swaps are needed.
 * it is a comparison sort. Although the algorithm is simple,
-  most of the other sorting algorithms are more efficient for large lists.
+* most of the other sorting algorithms are more efficient for large lists.
 ======>  worst-case and average complexity both О(n2).
 * insertion sort, tend to have better performance than bubble sort.
 * bubble sort is not a practical sorting algorithm when n is large.
 
-
+```java
 public static void intfun2(int[] a) 
 	{
 		boolean sorted = false;
@@ -107,4 +111,5 @@ public static void intfun2(int[] a)
 				}
 			}
 		}
-*/
+	}
+```

@@ -1,11 +1,11 @@
-QUEUE: head + tail pointer
+# QUEUE: head + tail pointer
 
 * queue is also an Abstract Data Type or ADT. 
 * A queue follows FIFO (First-in, First out) policy.
 * a new element enters a queue at the last (tail of the queue) and removal of an element occurs from the front (head of the queue).
 * can implement the queue using a linked list as well as with an array.
 * operations which are done on a queue are:
-	1  Enqueue() 
+	1.  Enqueue() 
 	which adds an element to the queue. 
 	any new item enters at the tail of the queue, so Enqueue adds an item to the tail of a
 	2. Dequeue()
@@ -16,7 +16,7 @@ QUEUE: head + tail pointer
 	5. Front() → It is similar to the top operation of a stack i.e., it returns the front element of the queue (but don’t delete it).
 
 
-Queue Using an Array: 
+## Queue Using an Array: 
 
 * We will maintain two pointers - tail and head to represent a queue
 * head= head will always point to the oldest element which was added
@@ -26,23 +26,27 @@ Queue Using an Array:
 
 1. isEmpty= whether the queue has any element or not.
 
+```
 IS_EMPTY(Q) // start by passing queue
   If Q.tail == Q.head //if head and tail are pointing to the same location or not at any time.
       return True // q is empty
   return False
--------------------------------------------------------
 
+```
 2. isFull= whether the queue is full or not.
 
+```
 IS_FULL(Q)	// start by passing queue
   if Q.head = Q.tail+1 //if the head of a queue is 1 more than the tail
       return True //ueue is full.
   Return False
---------------------------------------------------------
+```
 
-3. Enqueue = add item to queue
+1. Enqueue = add item to queue
 
-To enqueue any item to the queue, we will first check if the queue is full 
+* To enqueue any item to the queue, we will first check if the queue is full .
+  
+```  
 Enqueue(Q, x)   //start by passing that item going to add x and queue Q
   if isFull(Q) //check if the queue is full or not 
       Error “Queue Overflow”
@@ -53,12 +57,13 @@ Enqueue(Q, x)   //start by passing that item going to add x and queue Q
       else
           Q.tail = Q.tail+1 // otherise increase the tail by 1.
 
-----------------------------------------------------------------------
+```
 
-4 Dequeue:
+4.  Dequeue:
 
-To dequeue, we will first store the item which we are going to delete from the queue in a variable because we will be returning it at last.
+* To dequeue, we will first store the item which we are going to delete from the queue in a variable because we will be returning it at last.
 
+```
 Dequeue(Q, x)
   if isEmpty(Q) // check q empty or not 
       Error “Queue Underflow”
@@ -69,8 +74,8 @@ Dequeue(Q, x)
       else
           Q.head = Q.head+1 //increase the head pointer by 1.
       return x
-
-
+```
+```c
  #include <stdio.h>
 #include <stdlib.h>
 
@@ -166,27 +171,29 @@ display(q);
 return 0;
 }
 
+```
 
-
-Queue Using Linked List: 
+**Queue Using Linked List:**
 
 * a linked list is a dynamic data structure and we can change the size of it whenever it is needed.
 * so, we are not going to consider that there is a maximum size of the queue and thus the queue will never overflow
 * However, can set a maximum size to restrict the ll from growing more than that size.
-* 
+
 
 1. is_empty
 
+```
 IS_EMPTY(Q)
 
   if Q.head == null //if head will point to NULL.
       return True
   return False
-  ---------------------------------------
+```
 
 
 2. Enqueue: 
 
+```
  ENQUEUE(Q, n)
   if IS_EMPTY(Q)
       Q.head = n  // if queue is empty 
@@ -195,10 +202,11 @@ IS_EMPTY(Q)
      Q.tail.next = n //adds a new element to the last of a linked list.
      Q.tail = n
 
-------------------------------
+```
 
  3. Dequeue:
 
+```
  DEQUEUE(Q, n)
   if IS_EMPTY(Q)
       Error "Queue Underflow"
@@ -206,11 +214,11 @@ IS_EMPTY(Q)
       x = Q.head.data //to dequeue, remove the head of the linked list
       Q.head = Q.head.next
       return x
+```
 
-      
+**EXAMPLE**
 
-
-
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -306,7 +314,4 @@ traversal(q);
 return 0;
 }
 
-
-
-
-
+```

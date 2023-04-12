@@ -1,3 +1,6 @@
+# Selection-Sort:
+
+```java
 import java.util.Scanner;
 class SelectionSort
 {
@@ -68,14 +71,8 @@ class SelectionSort
 		
 	}
 }
-/*
+```
 * selection sort is a combination of searching and sorting.
-* Selecting the lowest element(initial) requires scanning all n elements (this takes n − 1 comparisons) and
-  then swapping it into the first position.
-* in the selection sort, the inner loop finds the next smallest (or largest) value and
-  the outer loop places that value into its proper location.
-* Finding the next lowest element requires scanning the remaining n − 1 elements and so on, 
-  for (n − 1) + (n − 2) + ... + 2 + 1 = n(n − 1) / 2 ∈ Θ(n2) comparisons.
-
-
-*/
+* Selecting the lowest element(initial) requires scanning all n elements (this takes n − 1 comparisons) and then swapping it into the first position.
+* in the selection sort, the inner loop finds the next smallest (or largest) value and the outer loop places that value into its proper location.
+* Finding the next lowest element requires scanning the remaining n − 1 elements and so on, for (n − 1) + (n − 2) + ... + 2 + 1 = n(n − 1) / 2 ∈ Θ(n2) comparisons.
