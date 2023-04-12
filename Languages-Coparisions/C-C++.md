@@ -9,13 +9,14 @@
 -------------------------------------
 ## 1. i/o manipulation in c++= <iostream>:
 
-1. **<ios>**
-2. **<istream>**
-3. **<ostream>**
-4. **<iostream>**
-5. **<fstream>**
-6. **<stream>**
-
+```c++
+1. <ios>
+2. <istream>
+3. <ostream>
+4. <iostream>
+5. <fstream>
+6. <stream>
+```
 ## 2. i/o manipulation in c= <stdio.h>= fun+macros: 
 
 1. fopen 
