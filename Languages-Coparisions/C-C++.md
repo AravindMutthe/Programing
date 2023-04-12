@@ -8,7 +8,7 @@
 5. math.h
 6. stdlib.h
 ```
-## 1. i/o manipulation in c++= <iostream>:
+## 1. i/o manipulation in c++= iostream:
 
 ```c++
 1. <ios>
@@ -18,7 +18,7 @@
 5. <fstream>
 6. <stream>
 ```
-## 2. i/o manipulation in c= <stdio.h>= fun+macros: 
+## 2. i/o manipulation in c= stdio.h= fun+macros: 
 
 ```c
 1. fopen ()
@@ -36,7 +36,7 @@
 3. <string> //class
 ```
 
-## 4. character manipulation <cctype.h>/<cctype>:
+## 4. character manipulation cctype.h / cctype:
 
 * following fun returns int type 0=false,rem=true.
 
